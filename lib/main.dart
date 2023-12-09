@@ -7,6 +7,7 @@ import 'ServicesTab.dart';
 import 'ServicesTabCards.dart';
 import 'ServicesTabCards2.dart';
 import 'RatesAndLimits.dart';
+import 'ActListing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -83,6 +84,8 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               ratesAndLimits(),
+              SizedBox(height: 32),
+              actListing(),
             ],
           ),
         ),
