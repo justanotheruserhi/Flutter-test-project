@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget servicesTabCard1() {
+Widget servicesTabCard2() {
   return SizedBox(
     width: 216,
     height: 130,
@@ -21,7 +21,7 @@ Widget servicesTabCard1() {
                   height: 36,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('img/Sber.png'),
+                      image: AssetImage('img/Percent.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -38,7 +38,7 @@ Widget servicesTabCard1() {
               ],
             ),
             const Spacer(),
-            Text('Платёж 9 июля',
+            Text('Автопродление 21 августа',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.black,

@@ -5,6 +5,8 @@ import 'HeaderBar.dart';
 import 'NavBar.dart';
 import 'ServicesTab.dart';
 import 'ServicesTabCards.dart';
+import 'ServicesTabCards2.dart';
+import 'RatesAndLimits.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, //without this line ServicesTab and RatesAndLimits start at the center for some reason
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +73,16 @@ class MyApp extends StatelessWidget {
               ),
               navBar(),
               services(),
-              servicesTabCards(),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    servicesTabCard1(),
+                    servicesTabCard2(),
+                  ],
+                ),
+              ),
+              ratesAndLimits(),
             ],
           ),
         ),
