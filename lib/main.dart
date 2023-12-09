@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'HeaderBar.dart';
+import 'NavBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
+              navBar(),
             ],
           ),
         ),
