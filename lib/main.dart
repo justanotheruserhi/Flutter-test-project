@@ -3,6 +3,8 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'HeaderBar.dart';
 import 'NavBar.dart';
+import 'ServicesTab.dart';
+import 'ServicesTabCards.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,6 +69,8 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               navBar(),
+              services(),
+              servicesTabCards(),
             ],
           ),
         ),
