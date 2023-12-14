@@ -1,0 +1,96 @@
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+import 'HeaderBar.dart';
+import 'NavBar.dart';
+import 'SectionTitle.dart';
+import 'ServiceTabCard.dart';
+import 'RatePanel.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        // Add Scaffold as the direct child of MaterialApp to define the structure of the screen
+        appBar: AppBar(
+            //title: Text('Flutter Test Project'),
+            ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, //without this line ServicesTab and RatesAndLimits start at the center for some reason
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14.0),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('img/Cross.png'),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  headerBar(),
+                  Spacer(),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 14.0),
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('img/Exit.png'),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              navBar(),
+              titleAndSubtitle('У вас подключено', 'Подписки, автоплатежи и сервисы на которые вы подписались'),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    servicesTabCard('СберПрайм', 'Платёж 9 июля', '199 ₽ в месяц', 'img/Sber.png'),
+                    servicesTabCard('СберПрайм', 'Автопродление 21 августа', '199 ₽ в месяц', 'img/Percent.png'),
+                  ],
+                ),
+              ),
+              titleAndSubtitle('Тарифы и лимиты', 'Для операций в Сбербанк Онлайн'),
+              SizedBox(height: 32),
+              rateItem('Изменить суточный лимит', 'На платежи и переводы', 'img/Speedometer.png'),
+              rateItem('Переводы без комиссии', 'Показать остаток в этом месяце', 'img/Percentage.png'),
+              rateItem('Информация о тарифах', 'и лимитах', 'img/Arrow.png'),
+              titleAndSubtitle('Интересы', 'Мы подбираем истории и предложения по темам, которые вам нравятся')
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
