@@ -3,11 +3,9 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'HeaderBar.dart';
 import 'NavBar.dart';
-import 'ServicesTab.dart';
-import 'ServicesTabCards.dart';
-import 'ServicesTabCards2.dart';
-import 'RatesAndLimits.dart';
-import 'ActListing.dart';
+import 'SectionTitle.dart';
+import 'ServiceTabCard.dart';
+import 'RatePanel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,19 +71,22 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               navBar(),
-              services(),
+              titleAndSubtitle('У вас подключено', 'Подписки, автоплатежи и сервисы на которые вы подписались'),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    servicesTabCard1(),
-                    servicesTabCard2(),
+                    servicesTabCard('СберПрайм', 'Платёж 9 июля', '199 ₽ в месяц', 'img/Sber.png'),
+                    servicesTabCard('СберПрайм', 'Автопродление 21 августа', '199 ₽ в месяц', 'img/Percent.png'),
                   ],
                 ),
               ),
-              ratesAndLimits(),
+              titleAndSubtitle('Тарифы и лимиты', 'Для операций в Сбербанк Онлайн'),
               SizedBox(height: 32),
-              actListing(),
+              rateItem('Изменить суточный лимит', 'На платежи и переводы', 'img/Speedometer.png'),
+              rateItem('Переводы без комиссии', 'Показать остаток в этом месяце', 'img/Percentage.png'),
+              rateItem('Информация о тарифах', 'и лимитах', 'img/Arrow.png'),
+              titleAndSubtitle('Интересы', 'Мы подбираем истории и предложения по темам, которые вам нравятся')
             ],
           ),
         ),

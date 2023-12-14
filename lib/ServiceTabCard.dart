@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget servicesTabCard1() {
+Widget servicesTabCard(String heading, String title, String subtitle, String imageRoute) {
   return SizedBox(
     width: 216,
     height: 130,
@@ -21,13 +21,13 @@ Widget servicesTabCard1() {
                   height: 36,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('img/Sber.png'),
+                      image: AssetImage(imageRoute),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 const SizedBox(width: 12),
-                Text('СберПрайм',
+                Text(heading,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -38,7 +38,7 @@ Widget servicesTabCard1() {
               ],
             ),
             const Spacer(),
-            Text('Платёж 9 июля',
+            Text(title,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.black,
@@ -46,7 +46,7 @@ Widget servicesTabCard1() {
                   fontFamily: "SF Pro Display",
                   letterSpacing: -0.4,
                 )),
-            Text('199 ₽ в месяц',
+            Text(subtitle,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.black.withOpacity(0.550000011920929),

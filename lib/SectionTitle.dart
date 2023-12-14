@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget services() {
+Widget titleAndSubtitle(String title, String subtitle) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -9,7 +9,7 @@ Widget services() {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('У вас подключено',
+              Text(title,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
@@ -17,7 +17,7 @@ Widget services() {
                     letterSpacing: -0.7,
                   )),
               SizedBox(height: 8),
-              Text('Подписки, автоплатежи и сервисы на которые вы подписались',
+              Text(subtitle,
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black.withOpacity(0.550000011920929),
